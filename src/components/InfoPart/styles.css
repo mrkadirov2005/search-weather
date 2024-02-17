@@ -1,0 +1,76 @@
+.box_part{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-direction: column;
+background-color: rgb(6, 6, 34);
+width: 70%;
+height: 400px;
+border-radius: 4px; 
+margin-left: auto;
+margin-right: auto;
+}
+.location_style{
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+.location_style img{
+    width: 35px;
+    margin: 0;
+    margin-bottom: -10px;
+}
+.weather_box_bottom{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 30%;
+}
+.main_tm_indicator{
+    font-size: 45px;
+    color: white;
+    background-image: linear-gradient(to top,blue,green);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+time{
+    color: white;
+    margin-left: auto;
+    margin-right: 15px;
+}
+.humidity{
+    color: white;
+    display: flex;
+
+}
+.humidity img{
+    width: 25px;
+    height: 25px;
+}
+.location_info{
+    display: flex;
+    width: 120%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.toggler_C{
+    background-color: orange;
+    padding:3px 5px ;
+}
+.toggler_F{
+    background-color: green;
+    padding:3px 5px ;
+    margin-left: 15px;  
+}
+.local_time{
+    background-color:lawngreen;
+    color: black;
+    border: 2px solid white;
+    padding: 2px 5px;
+    margin: 0 15px;
+}
