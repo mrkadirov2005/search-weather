@@ -17,7 +17,7 @@ export default function NotificationsPage() {
     const hours = now.getHours();
     const minutes = now.getMinutes();
     // Check if it's midday (12:00 PM)
-    if (hours === 12 && minutes === 0) {
+    if (hours === 18 && minutes === 15) {
       // Check if the browser supports notifications
       if ("Notification" in window) {
         // Check if notification permission has already been granted
