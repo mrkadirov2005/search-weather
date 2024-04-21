@@ -4,6 +4,7 @@ import CustomInfo from "./pages/CustomInfo";
 import { getErrorcontidion, getPrevWidth } from "./features/selectors/selectors";
 import './App.css'
 import { useEffect } from "react";
+import NotificationsPage from "./pages/Notifications";
 
 
 
@@ -11,6 +12,15 @@ import { useEffect } from "react";
 
 function App() {
 
+
+
+
+
+
+
+
+
+  
   useEffect(() => {
     if(window.localStorage.getItem("initial")){
       dispatch(fetchCountryWeather(window.localStorage.getItem("initial")))
@@ -49,6 +59,7 @@ const isError=useSelector(getErrorcontidion)
           return (
             <div className="App">
            <CustomInfo/>
+           <NotificationsPage/>
            
             </div>
           )
