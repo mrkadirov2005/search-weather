@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getNotifications } from '../features/selectors/selectors';
 
 export default function NotificationsPage() {
   const [notificationPermission, setNotificationPermission] = useState(Notification.permission);
+  const  notificationInfo=useSelector(getNotifications).time.split(".")
 
+console.log("not:minut",notificationInfo)
   useEffect(() => {
     const intervalId = setInterval(() => {
       sendMiddayNotification();
@@ -17,7 +21,7 @@ export default function NotificationsPage() {
     const hours = now.getHours();
     const minutes = now.getMinutes();
     // Check if it's midday (12:00 PM)
-    if (hours === 18 && minutes === 15) {
+    if (hours === notificationInfo[0] && minutes === notificationInfo[1]) {
       // Check if the browser supports notifications
       if ("Notification" in window) {
         // Check if notification permission has already been granted

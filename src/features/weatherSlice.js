@@ -61,8 +61,14 @@ let initialState = {
     pending: false,
     error: false,
     isError:false,
-    window:0
+    window:0,
+    notificationInfo:{
+      time:"",
+      isOpen:true,
+      status:"denied"
 
+    }
+   
 }
 
 
@@ -108,6 +114,16 @@ let weatherSlice = createSlice({
         },
         getWindowWidth(state){
           state.window=window.innerWidth
+        },
+        SetNote_time(state,action){
+          state.notificationInfo.time=action.payload
+          state.notificationInfo.status="granted"
+          state.notificationInfo.isOpen=false
+        },
+        setDeniedNotifications(state,action){
+          state.notificationInfo.status="denied"
+          state.notificationInfo.isOpen=false;
+          state.notificationInfo.time="0.0";
         }
 
     },
@@ -157,6 +173,6 @@ let weatherSlice = createSlice({
 
 
 // export const getCurrentState=(state)=>state;
-export const { handleFahrenheit,handleCelcius,getWindowWidth} = weatherSlice.actions
+export const { handleFahrenheit,handleCelcius,getWindowWidth,SetNote_time,setDeniedNotifications} = weatherSlice.actions
 export default weatherSlice.reducer
 

@@ -6,3 +6,4 @@ export const getErrorMessage=state=>state.weather.error
 export const getErrorcontidion=state=>state.weather.isError
 export const getType=state=>state.weather.type
 export const getPrevWidth=state=>state.weather.window
+export const getNotifications=state=>state.weather.notificationInfo
