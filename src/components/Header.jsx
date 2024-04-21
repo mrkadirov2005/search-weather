@@ -36,6 +36,8 @@ const LOGO=styled.h1`
 const INPUT=styled.input`
 width: ${winWidth/5}px;
 height: ${winWidth>600?'25px':winWidth/20+'px'};
+padding: 2px 5px;
+outline: none;
 `
 const TYPE=styled.div`
 width:${winWidth>1000?"":'80%'};

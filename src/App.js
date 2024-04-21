@@ -2,7 +2,6 @@ import { useDispatch, useSelector, } from "react-redux";
 import {  fetchData, getWindowWidth } from "./features/weatherSlice";
 import CustomInfo from "./pages/CustomInfo";
 import { getErrorcontidion, getPrevWidth } from "./features/selectors/selectors";
-import ErrorPage from "./pages/ErrorPage";
 import './App.css'
 import { useEffect } from "react";
 
