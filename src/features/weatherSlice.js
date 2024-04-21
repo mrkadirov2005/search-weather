@@ -73,7 +73,6 @@ const includeAqi = 'yes';
 
 const apiUrlWithParams = `${apiUrl}?key=${apiKey}&q=${location}&aqi=${includeAqi}`;
 console.log(apiUrlWithParams)
-// const apiUrlWithParams ="https://jsonplaceholder.typicode.com/posts"
 
 
 export const fetchData = createAsyncThunk('weather/fetchWeather', async () => {

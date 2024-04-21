@@ -1,5 +1,5 @@
 import { useDispatch, useSelector, } from "react-redux";
-import {  fetchData, getWindowWidth } from "./features/weatherSlice";
+import {  fetchCountryWeather, fetchData, getWindowWidth } from "./features/weatherSlice";
 import CustomInfo from "./pages/CustomInfo";
 import { getErrorcontidion, getPrevWidth } from "./features/selectors/selectors";
 import './App.css'
@@ -8,10 +8,23 @@ import { useEffect } from "react";
 
 
 
+
 function App() {
+
+  useEffect(() => {
+    if(window.localStorage.getItem("initial")){
+      dispatch(fetchCountryWeather(window.localStorage.getItem("initial")))
+
+    }else{
+      const location=prompt("Type your current location:")
+      window.localStorage.setItem("initial",JSON.stringify(location))
+      dispatch(fetchCountryWeather(location))
+    }
+   
+
+  }, [])
   const dispatch=useDispatch()
 const prevWidth=useSelector(getPrevWidth)
-
 console.log(prevWidth)
 
 window.innerWidth!==prevWidth?dispatch(getWindowWidth()):console.log(prevWidth)
