@@ -6,7 +6,6 @@ export default function NotificationsPage() {
         var now = new Date();
         var hours = now.getHours();
         var minutes = now.getMinutes();
-        alert(hours)
         // Check if it's midday (12:00 PM)
         if (hours === 18 && minutes === 10) {
           // Check if the browser supports notifications
