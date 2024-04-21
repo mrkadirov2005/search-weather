@@ -119,6 +119,7 @@ let weatherSlice = createSlice({
           state.notificationInfo.time=action.payload
           state.notificationInfo.status="granted"
           state.notificationInfo.isOpen=false
+          alert(`you will be notified at ${action.payload.split(".")[0]}:${action.payload.split(".")[1]}`)
         },
         setDeniedNotifications(state,action){
           state.notificationInfo.status="denied"

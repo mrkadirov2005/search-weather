@@ -10,7 +10,7 @@ console.log("not:minut",notificationInfo)
   useEffect(() => {
     const intervalId = setInterval(() => {
       sendMiddayNotification();
-    }, 1000); // Check every second
+    }, 30000); // Check every second
 
     return () => clearInterval(intervalId);
   }, []);
@@ -21,7 +21,8 @@ console.log("not:minut",notificationInfo)
     const hours = now.getHours();
     const minutes = now.getMinutes();
     // Check if it's midday (12:00 PM)
-    if (hours === Number(notificationInfo[0]) && minutes === Number(notificationInfo[1])) {
+    if (hours == Number(notificationInfo[0]) && minutes == Number(notificationInfo[1])) {
+
       // Check if the browser supports notifications
       if ("Notification" in window) {
         // Check if notification permission has already been granted
