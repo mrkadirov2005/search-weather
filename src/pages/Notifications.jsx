@@ -6,7 +6,7 @@ export default function NotificationsPage() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       sendMiddayNotification();
-    }, 60000); // Check every second
+    }, 1000); // Check every second
 
     return () => clearInterval(intervalId);
   }, []);
@@ -61,12 +61,11 @@ export default function NotificationsPage() {
       });
     }
   };
-
+const isNotification=Notification.permission
   return (
     <div>
       <h1>Notifications page</h1>
-      <button id='notificationBoard' onClick={handleNotifications}>notification: {notificationPermission ? "Granted" : "Denied"}</button>
-      <button onClick={()=>new Notification("salomat")}>check NOtifications</button>
+      <button id='notificationBoard' onClick={handleNotifications}>notification: {isNotification=="granted" ? "Granted" : "Denied"}</button>
     </div>
   );
 }
