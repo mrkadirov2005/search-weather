@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { getNotifications } from '../features/selectors/selectors';
 
 export default function SetNotTimeModal() {
+
+    const notificationInfo=useSelector(getNotifications).time.split()
     const dispatch = useDispatch();
     const [turn, setTurn] = useState(1); // Use state to manage the value of Turn
     const [time,setTime]=useState(0.0)
@@ -21,6 +23,7 @@ export default function SetNotTimeModal() {
             <input type='number'  placeholder="format: 18.00" onChange={(e) =>setTime(e.target.value)} />
             <button onClick={()=>{ 
                 dispatch(SetNote_time(time))
+                alert(`you will be notified everyday at ${Number(notificationInfo[0])}:${Number(notificationInfo[1])}`)
             }}>save</button>
         </div>
     );
